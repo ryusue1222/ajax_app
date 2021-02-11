@@ -5,7 +5,8 @@ def index
 end
 
 def create
-  Post.create(content: params[:content])
+  Post.create(content: params[:content], checked: false)
+  render json:{ post: post }
 end
 
 def checked
